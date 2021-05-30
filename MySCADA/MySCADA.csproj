@@ -53,6 +53,9 @@
     <Reference Include="XamlBuildTask" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Display.cs" />
     <Compile Include="DisplayTag.cs" />
     <Compile Include="Form1.cs">

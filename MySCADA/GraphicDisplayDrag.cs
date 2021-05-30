@@ -66,54 +66,7 @@ namespace MySCADA
 
         
 
-        private void updateTimer1_Tick(object sender, EventArgs e)
-        {
-            Task task = Parent.FindTask("Task_1"); //VS bị confused giứa task của mình và task của system
-            Tag tag;
-            if (task != null)
-            {
-                tag = task.FindTag("Motor_1_Mode"); //Đọc mode Motor1
-               
-                if (tag != null && !cbMotor_1_Mode.Focused)
-                {
-                    cbMotor_1_Mode.Text = tag.Value.ToString() == "1" ? "Manual" : "Auto";
-                }
-                tag = task.FindTag("Motor_2_Mode"); //Đọc mode Motor2
-                if (tag != null && !cbMotor_2_Mode.Focused)
-                {
-                    cbMotor_2_Mode.Text = tag.Value.ToString() == "1" ? "Manual" : "Auto";
-                }
-                tag = task.FindTag("Valve_Mode"); //Đọc mode Valve
-                if (tag != null && !cbValve_Mode.Focused)
-                {
-                    cbValve_Mode.Text = tag.Value.ToString() == "1" ? "Manual" : "Auto";
-                }
-
-                Tag tagRunFB, tagPos;
-                tagRunFB = task.FindTag("Motor_1_RunFB"); //Đọc RunFB Motor1
-                tagPos = task.FindTag("Motor_1_Pos");
-                if (tagRunFB != null && tagPos!=null)
-                {
-                    pbMotor_1.Image = MotorSwCaImg(Convert.ToBoolean(tagRunFB.Value), Convert.ToInt16(tagPos.Value));
-                    pbMotor_1_RunFB.BackColor = tagRunFB.Value == true ? Color.Green:Color.Gray;
-                }
-                tagRunFB = task.FindTag("Motor_2_RunFB"); //Đọc RunFB Motor2
-                tagPos = task.FindTag("Motor_2_Pos");
-                if (tagRunFB != null && tagPos != null)
-                {
-                    pbMotor_2.Image = MotorSwCaImg(Convert.ToBoolean(tagRunFB.Value), Convert.ToInt16(tagPos.Value));
-                    pbMotor_2_RunFB.BackColor = tagRunFB.Value == true ? Color.Green : Color.Gray;
-                }
-                tagRunFB = task.FindTag("Valve_RunFB"); //Đọc RunFB Valve
-                if (tagRunFB != null)
-                {
-                    pbValve.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pbValve.Size = new Size(200, 150);
-                    pbValve.Image = (Convert.ToBoolean(tagRunFB.Value)) ? img_valve_on : img_valve_off;
-                    pbValve_RunFB.BackColor = tagRunFB.Value == true ? Color.Green : Color.Gray;
-                }
-            }
-        }
+       
         private Image MotorSwCaImg(bool status, Int16 position)
         {
             Image img = img_motor_off_1;
@@ -194,40 +147,78 @@ namespace MySCADA
         }
         private void cbMotor_1_Mode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbMotor_1_Mode.SelectedIndex == 0)
-            {
-                Parent.S71500.WriteInt("DB1.DBW0", (Int16)1);
-            }
-            else if (cbMotor_1_Mode.SelectedIndex == 1)
-            {
-                Parent.S71500.WriteInt("DB1.DBW0", (Int16)2);
-            }
+            
         }
         private void cbMotor_2_Mode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbMotor_2_Mode.SelectedIndex == 0)
+           
+        }
+
+        private void enableCbTimer_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updateTimer1_Tick(object sender, EventArgs e)
+        {
+
+            Task task = Parent.FindTask("Task_1"); //VS bị confused giứa task của mình và task của system
+            if (task != null)
             {
-                Parent.S71500.WriteInt("DB2.DBW0", (Int16)1);
+                Tag tagRunFB, tagPos;
+                tagRunFB = task.FindTag("Motor_1_RunFB"); //Đọc RunFB Motor1
+                tagPos = task.FindTag("Motor_1_Pos");
+                if (tagRunFB != null && tagPos != null)
+                {
+                    pbMotor_1.Image = MotorSwCaImg(Convert.ToBoolean(tagRunFB.Value), Convert.ToInt16(tagPos.Value));
+                  
+                }
+                tagRunFB = task.FindTag("Motor_2_RunFB"); //Đọc RunFB Motor2
+                tagPos = task.FindTag("Motor_2_Pos");
+                if (tagRunFB != null && tagPos != null)
+                {
+                    pbMotor_2.Image = MotorSwCaImg(Convert.ToBoolean(tagRunFB.Value), Convert.ToInt16(tagPos.Value));
+                }
+                tagRunFB = task.FindTag("Valve_RunFB"); //Đọc RunFB Valve
+                if (tagRunFB != null)
+                {
+                    pbValve.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pbValve.Size = new Size(200, 150);
+                    pbValve.Image = (Convert.ToBoolean(tagRunFB.Value)) ? img_valve_on : img_valve_off;
+                }
+                Tag tagLevel = task.FindTag("Level");
+                if(tagLevel != null)
+                {
+                    barLevel.Value = tagLevel.Value;
+                }
             }
-            else if (cbMotor_2_Mode.SelectedIndex == 1)
-            {
-                Parent.S71500.WriteInt("DB2.DBW0", (Int16)2);
-            }
+        }
+
+        private void buttonStart_MouseDown(object sender, MouseEventArgs e)
+        {
+            Parent.S71500.WriteBool("M0.0", true);
+        }
+
+        private void buttonStart_MouseUp(object sender, MouseEventArgs e)
+        {
+            Parent.S71500.WriteBool("M0.0", false);
+
+        }
+
+        private void buttonStop_MouseDown(object sender, MouseEventArgs e)
+        {
+            Parent.S71500.WriteBool("M0.1", true);
+        }
+
+        private void buttonStop_MouseUp(object sender, MouseEventArgs e)
+        {
+            Parent.S71500.WriteBool("M0.1", false);
         }
 
         private void cbValve_Mode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbValve_Mode.SelectedIndex == 0)
-            {
-                Parent.S71500.WriteInt("DB3.DBW0", (Int16)1);
-            }
-            else if (cbValve_Mode.SelectedIndex == 1)
-            {
-                Parent.S71500.WriteInt("DB3.DBW0", (Int16)2);
-            }
+          
         }
-
-   
 
         private void btMotor_1_Start_MouseDown(object sender, MouseEventArgs e)
         {

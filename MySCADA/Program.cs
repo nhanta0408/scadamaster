@@ -56,8 +56,9 @@ namespace MySCADA
             Tag Motor_1_Pos = new Tag("Motor_1_Pos", "Motor_1.Pos");
             Tag Motor_2_Pos = new Tag("Motor_2_Pos", "Motor_2.Pos");
             Tag Valve_Pos = new Tag("Valve_Pos", "Valve.Pos");
-            
-            
+
+            Tag Level = new Tag("Level", "MW20");
+
             //Add các con vào Parent
             Root.AddTask(Task1);
 
@@ -88,6 +89,8 @@ namespace MySCADA
             Task1.AddTag(Motor_1_Pos);
             Task1.AddTag(Motor_2_Pos);
             Task1.AddTag(Valve_Pos);
+
+            Task1.AddTag(Level);
 
             Root.RunTask("Task_1");
 

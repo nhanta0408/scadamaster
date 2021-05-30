@@ -17,6 +17,9 @@ namespace MySCADA
         public Device Motor_1 = new Device(); //Device = "Motor_1"(id á)
         public Device Motor_2 = new Device(); //Device = "Motor_2"
         public Device Valve = new Device(); //Device = "Valve"
+        public short Level;
+        public bool StartAuto;
+        public bool StopAuto;
         public SCADA Parent;
         public PLC()
         {
@@ -44,6 +47,11 @@ namespace MySCADA
                 thePLC.ReadClass(Motor_1, 1);
                 thePLC.ReadClass(Motor_2, 2);
                 thePLC.ReadClass(Valve, 3);
+
+                object levelObj = thePLC.Read("MW20");
+                Level = ((ushort)levelObj).ConvertToShort();
+                Console.WriteLine("Level nè: " + Level.ToString());
+
             }
 
         }

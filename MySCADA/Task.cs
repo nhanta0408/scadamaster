@@ -52,136 +52,147 @@ namespace MySCADA
             for (int i = 0; i < Tags.Count; i++)
             {
                 Tag tag = (Tag)Tags[i];
-                string[] temp_result_slit = tag.Address.Split('.');
-                string obj = temp_result_slit[0];
-                string signal = temp_result_slit[1];
-                switch (obj)
+                if(tag.Name == "Level")
                 {
-                    case "Motor_1":
-                        switch (signal)
-                        {
-                            case "Mode":
-                                tag.Value = Parent.S71500.Motor_1.Mode; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now; 
-                                break;
-                            case "Start":
-                                tag.Value = Parent.S71500.Motor_1.Start; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Stop":
-                                tag.Value = Parent.S71500.Motor_1.Stop; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "RunFB":
-                                tag.Value = Parent.S71500.Motor_1.RunFB; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Reset":
-                                tag.Value = Parent.S71500.Motor_1.Reset; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Fault":
-                                tag.Value = Parent.S71500.Motor_1.Fault; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Pos":
-                                tag.Value = Parent.S71500.Motor_1.Pos; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-
-                        }
-                        break;
-                    case "Motor_2":
-                        switch (signal)
-                        {
-                            case "Mode":
-                                tag.Value = Parent.S71500.Motor_2.Mode; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Start":
-                                tag.Value = Parent.S71500.Motor_2.Start; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Stop":
-                                tag.Value = Parent.S71500.Motor_2.Stop; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "RunFB":
-                                tag.Value = Parent.S71500.Motor_2.RunFB; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Reset":
-                                tag.Value = Parent.S71500.Motor_2.Reset; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Fault":
-                                tag.Value = Parent.S71500.Motor_2.Fault; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Pos":
-                                tag.Value = Parent.S71500.Motor_2.Pos; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                        }
-                        break;
-                        case "Valve":
-                        switch (signal)
-                        {
-                            case "Mode":
-                                tag.Value = Parent.S71500.Valve.Mode; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Start":
-                                tag.Value = Parent.S71500.Valve.Start; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Stop":
-                                tag.Value = Parent.S71500.Valve.Stop; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "RunFB":
-                                tag.Value = Parent.S71500.Valve.RunFB; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Reset":
-                                tag.Value = Parent.S71500.Valve.Reset; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Fault":
-                                tag.Value = Parent.S71500.Valve.Fault; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                            case "Pos":
-                                tag.Value = Parent.S71500.Valve.Pos; //Parent là SCADA
-                                tag.Quality = "Good";
-                                tag.TimeStamp = DateTime.Now;
-                                break;
-                        }
-                        break;
-                    default:
-                        break;
+                    tag.Value = Parent.S71500.Level;
+                    tag.Quality = "Good";
+                    tag.TimeStamp = DateTime.Now;
+                   
                 }
+                else
+                {
+
+                    string[] temp_result_slit = tag.Address.Split('.');
+                    string obj = temp_result_slit[0];
+                    string signal = temp_result_slit[1];
+                    switch (obj)
+                    {
+                        case "Motor_1":
+                            switch (signal)
+                            {
+                                case "Mode":
+                                    tag.Value = Parent.S71500.Motor_1.Mode; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Start":
+                                    tag.Value = Parent.S71500.Motor_1.Start; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Stop":
+                                    tag.Value = Parent.S71500.Motor_1.Stop; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "RunFB":
+                                    tag.Value = Parent.S71500.Motor_1.RunFB; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Reset":
+                                    tag.Value = Parent.S71500.Motor_1.Reset; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Fault":
+                                    tag.Value = Parent.S71500.Motor_1.Fault; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Pos":
+                                    tag.Value = Parent.S71500.Motor_1.Pos; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
                             }
+                            break;
+                        case "Motor_2":
+                            switch (signal)
+                            {
+                                case "Mode":
+                                    tag.Value = Parent.S71500.Motor_2.Mode; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Start":
+                                    tag.Value = Parent.S71500.Motor_2.Start; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Stop":
+                                    tag.Value = Parent.S71500.Motor_2.Stop; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "RunFB":
+                                    tag.Value = Parent.S71500.Motor_2.RunFB; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Reset":
+                                    tag.Value = Parent.S71500.Motor_2.Reset; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Fault":
+                                    tag.Value = Parent.S71500.Motor_2.Fault; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Pos":
+                                    tag.Value = Parent.S71500.Motor_2.Pos; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                            }
+                            break;
+                        case "Valve":
+                            switch (signal)
+                            {
+                                case "Mode":
+                                    tag.Value = Parent.S71500.Valve.Mode; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Start":
+                                    tag.Value = Parent.S71500.Valve.Start; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Stop":
+                                    tag.Value = Parent.S71500.Valve.Stop; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "RunFB":
+                                    tag.Value = Parent.S71500.Valve.RunFB; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Reset":
+                                    tag.Value = Parent.S71500.Valve.Reset; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Fault":
+                                    tag.Value = Parent.S71500.Valve.Fault; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                                case "Pos":
+                                    tag.Value = Parent.S71500.Valve.Pos; //Parent là SCADA
+                                    tag.Quality = "Good";
+                                    tag.TimeStamp = DateTime.Now;
+                                    break;
+                            }
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                }
+            }
         }
 
         public void Sleep()
