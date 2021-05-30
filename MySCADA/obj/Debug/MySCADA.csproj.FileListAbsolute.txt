@@ -1,0 +1,16 @@
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\bin\Debug\MySCADA.exe.config
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\bin\Debug\MySCADA.exe
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\bin\Debug\MySCADA.pdb
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.csproj.CoreCompileInputs.cache
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.exe
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.pdb
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.GraphicDisplay.resources
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.csproj.GenerateResource.cache
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.csproj.CopyComplete
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.csprojAssemblyReference.cache
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.GraphicDisplayDrag.resources
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.Properties.Resources.resources
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.Motor.resources
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.MotorFaceplate.resources

@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "jo8RQRRsUWHP4yTBTj1qUCrtOBvzT6v9Ys8fLe0OKJUGnAgbCt2NqbK9lKI1Sq10GmgTXJdC92EzlIuMB7TSRg==",
+  "success": true,
+  "projectFilePath": "D:\\Study Document\\PGS202\\SCADA\\CSharpProject\\MySCADA\\App1\\App1\\App1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nhant\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\nhant\\.nuget\\packages\\prism.core\\7.0.0.362\\prism.core.7.0.0.362.nupkg.sha512",
+    "C:\\Users\\nhant\\.nuget\\packages\\prism.forms\\7.0.0.362\\prism.forms.7.0.0.362.nupkg.sha512",
+    "C:\\Users\\nhant\\.nuget\\packages\\xamarin.forms\\3.4.0.1008975\\xamarin.forms.3.4.0.1008975.nupkg.sha512"
+  ],
+  "logs": []
+}

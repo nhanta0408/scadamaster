@@ -1,0 +1,16 @@
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\bin\Debug\netstandard2.0\App1.deps.json
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\bin\Debug\netstandard2.0\App1.dll
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\bin\Debug\netstandard2.0\App1.pdb
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\obj\Debug\netstandard2.0\App1.csproj.CoreCompileInputs.cache
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\obj\Debug\netstandard2.0\App1.AssemblyInfoInputs.cache
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\obj\Debug\netstandard2.0\App1.AssemblyInfo.cs
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\obj\Debug\netstandard2.0\App1.dll
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\obj\Debug\netstandard2.0\App1.pdb
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\bin\Debug\netstandard2.0\MySCADA.exe
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\bin\Debug\netstandard2.0\MySCADA.pdb
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\bin\Debug\netstandard2.0\MySCADA.exe.config
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\obj\Debug\netstandard2.0\App1.csprojAssemblyReference.cache
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\obj\Debug\netstandard2.0\App1.csproj.CopyComplete
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\App1\App1\obj\Debug\netstandard2.0\XamlC.stamp
