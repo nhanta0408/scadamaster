@@ -51,6 +51,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="XamlBuildTask" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\ZedGraph.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicProgressBar.cs">
@@ -64,6 +67,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Historian.cs" />
     <Compile Include="Motor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +97,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RingBuffer.cs" />
+    <Compile Include="RJToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SCADA.cs" />
     <Compile Include="Tag.cs" />
     <Compile Include="Task.cs" />
@@ -120,6 +128,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Motor.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Motor_off_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Valve_off.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

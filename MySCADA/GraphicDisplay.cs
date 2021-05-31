@@ -116,8 +116,7 @@ namespace MySCADA
                 tag = task.FindTag("Motor_1_RunFB");
                 if (Convert.ToBoolean(tag.Value) == true)
                 {
-                    
-                    
+
                     //Image img;
                     //img = tag.Value == true ? imgOn : imgOff;
                     //pbMotor_1_RunFB.Image = img;

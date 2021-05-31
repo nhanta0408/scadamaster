@@ -12,7 +12,7 @@ namespace MySCADA
         public ArrayList Tasks = new ArrayList();
         public ArrayList Displays = new ArrayList();
         public ArrayList Motor_faceplates = new ArrayList();
-
+        public ArrayList Historians = new ArrayList();
 
         public PLC S71500;
 
@@ -114,6 +114,25 @@ namespace MySCADA
                     display.Engine();
             }
         }
+        public void AddHistorian(Historian historian)
+        {
+            historian.Parent = this;
+            Historians.Add(historian);
+        }
+        public Historian FindHistorian(string name)
+        {
+            Historian result = null;
+            foreach (var item in Historians)
+            {
+                var temp = (Historian)item;
+                if(temp.Name == name)
+                {
+                    result = temp;
+                }
+            }
+            return result;
+        }
+        
 
     }
 }

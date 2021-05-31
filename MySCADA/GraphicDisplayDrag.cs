@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZedGraph;
 using static MySCADA.Program;
 
 namespace MySCADA
@@ -18,13 +19,14 @@ namespace MySCADA
         int Period;
         public ArrayList Tags = new ArrayList();
         public SCADA Parent;
+        private bool zedGraphIsPanning;
         Image img;
         Image img_motor_on_1, img_motor_on_2, img_motor_on_3, img_motor_on_4, img_motor_on_5, img_motor_on_6, img_motor_on_7;
         Image img_motor_off_1, img_motor_off_2, img_motor_off_3, img_motor_off_4, img_motor_off_5, img_motor_off_6, img_motor_off_7;
 
         Image img_valve_on, img_valve_off;
 
-      
+
 
         public GraphicDisplayDrag(string name, int period)
         {
@@ -48,11 +50,11 @@ namespace MySCADA
             img_valve_on = Image.FromFile("valve/ValveSolinoid_on.png");
             img_valve_off = Image.FromFile("valve/ValveSolinoid_off.png");
 
-            Name = name; 
+            Name = name;
             Period = period;
             updateTimer1.Interval = Period;
             updateTimer1.Start();
-      
+
 
 
             pbMotor_1.Image = img_motor_off_1;
@@ -61,12 +63,51 @@ namespace MySCADA
             pbMotor_1.SizeMode = PictureBoxSizeMode.StretchImage;
             pbMotor_2.SizeMode = PictureBoxSizeMode.StretchImage;
             pbValve.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbValve.Size = new Size(150, 100);
+            pbValve.Size = new Size(110, 110);
+
+
         }
 
-        
+        private void GraphicDisplayDrag_Load(object sender, EventArgs e)
+        {
+            zedGraphIsPanning = false;
+            GraphPane myPane = zedGraphLevel.GraphPane;
+            myPane.Title.Text = "Đồ thị thể hiện mức nước trong bồn";
+            myPane.XAxis.Title.Text = "Time (Seconds)";
+            myPane.YAxis.Title.Text = "Chiều cao (mét)";
 
-       
+            RollingPointPairList list = new RollingPointPairList(10000);
+            RollingPointPairList list1 = new RollingPointPairList(10000);
+
+            LineItem curve = myPane.AddCurve("Level value", list, Color.Red, SymbolType.None);
+
+
+            myPane.XAxis.Scale.Min = 0;
+            myPane.XAxis.Scale.Max = 1500;
+            myPane.XAxis.Scale.MinorStep = 60;
+            myPane.XAxis.Scale.MajorStep = 300;
+            zedGraphLevel.AxisChange();
+        }
+        private void Draw(int x, int y, bool isPanning)
+        {
+            LineItem curve = zedGraphLevel.GraphPane.CurveList[0] as LineItem;
+            IPointListEdit list = curve.Points as IPointListEdit;
+            list.Add(x, y);
+
+            Scale xScale = zedGraphLevel.GraphPane.XAxis.Scale;
+            if (isPanning)
+            {
+                if (x > xScale.Max - xScale.MajorStep)
+                {
+                    xScale.Max = x + xScale.MajorStep;
+                    xScale.Min = xScale.Max - 1500;
+                }
+            }
+            zedGraphLevel.AxisChange();
+            zedGraphLevel.Invalidate();
+        }
+
+
         private Image MotorSwCaImg(bool status, Int16 position)
         {
             Image img = img_motor_off_1;
@@ -103,7 +144,7 @@ namespace MySCADA
             }
             return img;
         }
-  
+
 
         private void pbMotor_1_Click(object sender, EventArgs e)
         {
@@ -147,11 +188,11 @@ namespace MySCADA
         }
         private void cbMotor_1_Mode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
         private void cbMotor_2_Mode_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void enableCbTimer_Tick(object sender, EventArgs e)
@@ -171,7 +212,7 @@ namespace MySCADA
                 if (tagRunFB != null && tagPos != null)
                 {
                     pbMotor_1.Image = MotorSwCaImg(Convert.ToBoolean(tagRunFB.Value), Convert.ToInt16(tagPos.Value));
-                  
+
                 }
                 tagRunFB = task.FindTag("Motor_2_RunFB"); //Đọc RunFB Motor2
                 tagPos = task.FindTag("Motor_2_Pos");
@@ -183,13 +224,17 @@ namespace MySCADA
                 if (tagRunFB != null)
                 {
                     pbValve.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pbValve.Size = new Size(200, 150);
+                    pbValve.Size = new Size(110, 110);
                     pbValve.Image = (Convert.ToBoolean(tagRunFB.Value)) ? img_valve_on : img_valve_off;
                 }
                 Tag tagLevel = task.FindTag("Level");
-                if(tagLevel != null)
+                if (tagLevel != null)
                 {
                     barLevel.Value = tagLevel.Value;
+                    Historian levelHistorian = Parent.FindHistorian("Level");
+                    levelHistorian.ringBuffer.Enqueue(tagLevel.Value);
+
+                    Draw(levelHistorian.ringBuffer.count, levelHistorian.ringBuffer.Peek(), zedGraphIsPanning);
                 }
             }
         }
@@ -215,9 +260,22 @@ namespace MySCADA
             Parent.S71500.WriteBool("M0.1", false);
         }
 
+        private void rjToggleButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rjToggleButton1.Checked)
+            {
+                zedGraphIsPanning = true;
+            }
+            else
+            {
+                zedGraphIsPanning = false;
+
+            }
+        }
+
         private void cbValve_Mode_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+
         }
 
         private void btMotor_1_Start_MouseDown(object sender, MouseEventArgs e)

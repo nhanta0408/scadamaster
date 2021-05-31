@@ -20,12 +20,12 @@ namespace MySCADA
 
 
 
-           
+
             //Trước hết tạo phần cao nhất là SCADA
             SCADA Root = new SCADA();
             PLC plc = new PLC();
             Root.AddPLC(plc); //ko có đối số
-            
+
             //Tạo Task
             Task Task1 = new Task("Task_1", 100);
             //Tạo các Tag
@@ -104,6 +104,10 @@ namespace MySCADA
             Root.AddFaceplate(Motor_2_Faceplate);
             Root.AddFaceplate(Motor_3_Faceplate);
 
+
+            Historian levelHistorian = new Historian("Level",8000);
+            Root.AddHistorian(levelHistorian);
+
             //GraphicDisplay Main_Page = new GraphicDisplay("Main_Page", 100);
             //Main_Page.Parent = Root;
             //Main_Page.ShowDialog();
@@ -112,8 +116,23 @@ namespace MySCADA
             Main_Page_Drag.Parent = Root;
             Main_Page_Drag.ShowDialog();
             Console.ReadKey();
+
+            ////Test queue
+            //RingBuffer queue = new RingBuffer(10);
+
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    queue.Enqueue(i);
+            //    foreach (var item in queue.nums)
+            //    {
+            //        Console.Write("  " + item);
+            //    }
+            //    System.Threading.Thread.Sleep(200);
+            //    Console.Clear();
+            //}
+            //Console.ReadKey();
         }
 
-        
+
     }
 }

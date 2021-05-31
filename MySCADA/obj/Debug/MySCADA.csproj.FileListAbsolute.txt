@@ -13,4 +13,4 @@ D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.G
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.Properties.Resources.resources
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.Motor.resources
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.MotorFaceplate.resources
-D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.csprojAssemblyReference.cache
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\bin\Debug\ZedGraph.dll
