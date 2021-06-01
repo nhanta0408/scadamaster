@@ -83,7 +83,7 @@ namespace MySCADA
         //Constructor
         public RJToggleButton()
         {
-            this.MinimumSize = new Size(45, 22);
+            this.MinimumSize = new Size(100, 50);
         }
         //Methods
         private GraphicsPath GetFigurePath()

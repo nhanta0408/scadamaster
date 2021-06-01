@@ -8,10 +8,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>MySCADA</RootNamespace>
     <AssemblyName>MySCADA</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
@@ -56,6 +60,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alarm.cs" />
+    <Compile Include="AlarmDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlarmDisplay.Designer.cs">
+      <DependentUpon>AlarmDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlarmDisplayModel.cs" />
+    <Compile Include="AlarmTag.cs" />
     <Compile Include="BasicProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -68,6 +81,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Historian.cs" />
+    <Compile Include="LevelGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LevelGraph.Designer.cs">
+      <DependentUpon>LevelGraph.cs</DependentUpon>
+    </Compile>
     <Compile Include="Motor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,11 +128,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AlarmDisplay.resx">
+      <DependentUpon>AlarmDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GraphicDisplay.resx">
       <DependentUpon>GraphicDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GraphicDisplayDrag.resx">
       <DependentUpon>GraphicDisplayDrag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelGraph.resx">
+      <DependentUpon>LevelGraph.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Motor.resx">
       <DependentUpon>Motor.cs</DependentUpon>

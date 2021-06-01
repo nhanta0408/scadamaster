@@ -108,14 +108,28 @@ namespace MySCADA
             Historian levelHistorian = new Historian("Level",8000);
             Root.AddHistorian(levelHistorian);
 
+            Alarm levelAlarm = new Alarm("Level");
+            Root.AddAlarm(levelAlarm);
             //GraphicDisplay Main_Page = new GraphicDisplay("Main_Page", 100);
             //Main_Page.Parent = Root;
             //Main_Page.ShowDialog();
 
+            LevelGraph LevelGraph = new LevelGraph();
+            LevelGraph.Parent = Root;
+            Root.AddGraph(LevelGraph);
+
+            AlarmDisplay LevelAlarmDisplay = new AlarmDisplay();
+            LevelAlarmDisplay.Parent = Root;
+            Root.AddAlarmDisplay(LevelAlarmDisplay);
+
             GraphicDisplayDrag Main_Page_Drag = new GraphicDisplayDrag("Main_Page_Drag", 100);
             Main_Page_Drag.Parent = Root;
             Main_Page_Drag.ShowDialog();
+
+            
+            
             Console.ReadKey();
+
 
             ////Test queue
             //RingBuffer queue = new RingBuffer(10);

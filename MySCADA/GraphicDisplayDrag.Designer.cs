@@ -40,6 +40,8 @@ namespace MySCADA
             this.pbValve = new System.Windows.Forms.PictureBox();
             this.pbMotor_2 = new System.Windows.Forms.PictureBox();
             this.pbMotor_1 = new System.Windows.Forms.PictureBox();
+            this.buttonShowGraph = new System.Windows.Forms.Button();
+            this.buttonShowAlarm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbValve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMotor_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMotor_1)).BeginInit();
@@ -55,10 +57,10 @@ namespace MySCADA
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(62, 355);
-            this.buttonStart.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonStart.Location = new System.Drawing.Point(83, 438);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(56, 19);
+            this.buttonStart.Size = new System.Drawing.Size(120, 62);
             this.buttonStart.TabIndex = 10;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -67,10 +69,10 @@ namespace MySCADA
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(62, 382);
-            this.buttonStop.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonStop.Location = new System.Drawing.Point(83, 510);
+            this.buttonStop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(56, 19);
+            this.buttonStop.Size = new System.Drawing.Size(120, 62);
             this.buttonStop.TabIndex = 10;
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
@@ -79,7 +81,8 @@ namespace MySCADA
             // 
             // zedGraphLevel
             // 
-            this.zedGraphLevel.Location = new System.Drawing.Point(410, 11);
+            this.zedGraphLevel.Location = new System.Drawing.Point(547, 14);
+            this.zedGraphLevel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.zedGraphLevel.Name = "zedGraphLevel";
             this.zedGraphLevel.ScrollGrace = 0D;
             this.zedGraphLevel.ScrollMaxX = 0D;
@@ -88,7 +91,7 @@ namespace MySCADA
             this.zedGraphLevel.ScrollMinX = 0D;
             this.zedGraphLevel.ScrollMinY = 0D;
             this.zedGraphLevel.ScrollMinY2 = 0D;
-            this.zedGraphLevel.Size = new System.Drawing.Size(562, 336);
+            this.zedGraphLevel.Size = new System.Drawing.Size(749, 414);
             this.zedGraphLevel.TabIndex = 11;
             // 
             // barLevel
@@ -96,36 +99,35 @@ namespace MySCADA
             this.barLevel.BackColor = System.Drawing.Color.DarkGray;
             this.barLevel.Font = new System.Drawing.Font("Consolas", 10.25F);
             this.barLevel.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.barLevel.Location = new System.Drawing.Point(217, 26);
-            this.barLevel.Margin = new System.Windows.Forms.Padding(2);
+            this.barLevel.Location = new System.Drawing.Point(289, 32);
+            this.barLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barLevel.Name = "barLevel";
-            this.barLevel.Size = new System.Drawing.Size(37, 375);
+            this.barLevel.Size = new System.Drawing.Size(49, 462);
             this.barLevel.TabIndex = 9;
             this.barLevel.Text = "basicProgressBar1";
             // 
             // rjToggleButton1
             // 
             this.rjToggleButton1.AutoSize = true;
-            this.rjToggleButton1.Location = new System.Drawing.Point(494, 382);
-            this.rjToggleButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.rjToggleButton1.MinimumSize = new System.Drawing.Size(34, 18);
+            this.rjToggleButton1.Location = new System.Drawing.Point(659, 470);
+            this.rjToggleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rjToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
             this.rjToggleButton1.Name = "rjToggleButton1";
             this.rjToggleButton1.OffBackColor = System.Drawing.Color.Gray;
             this.rjToggleButton1.OffToggleColor = System.Drawing.Color.Gainsboro;
             this.rjToggleButton1.OnBackColor = System.Drawing.Color.MediumSlateBlue;
             this.rjToggleButton1.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.rjToggleButton1.Size = new System.Drawing.Size(34, 18);
+            this.rjToggleButton1.Size = new System.Drawing.Size(45, 22);
             this.rjToggleButton1.TabIndex = 12;
             this.rjToggleButton1.UseVisualStyleBackColor = true;
-            this.rjToggleButton1.CheckedChanged += new System.EventHandler(this.rjToggleButton1_CheckedChanged);
             // 
             // pbValve
             // 
             this.pbValve.Image = global::MySCADA.Properties.Resources.Valve_off;
-            this.pbValve.Location = new System.Drawing.Point(274, 279);
-            this.pbValve.Margin = new System.Windows.Forms.Padding(2);
+            this.pbValve.Location = new System.Drawing.Point(365, 343);
+            this.pbValve.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbValve.Name = "pbValve";
-            this.pbValve.Size = new System.Drawing.Size(110, 110);
+            this.pbValve.Size = new System.Drawing.Size(147, 135);
             this.pbValve.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbValve.TabIndex = 8;
             this.pbValve.TabStop = false;
@@ -134,10 +136,10 @@ namespace MySCADA
             // pbMotor_2
             // 
             this.pbMotor_2.Image = global::MySCADA.Properties.Resources.Motor_off_1;
-            this.pbMotor_2.Location = new System.Drawing.Point(62, 205);
-            this.pbMotor_2.Margin = new System.Windows.Forms.Padding(2);
+            this.pbMotor_2.Location = new System.Drawing.Point(83, 252);
+            this.pbMotor_2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbMotor_2.Name = "pbMotor_2";
-            this.pbMotor_2.Size = new System.Drawing.Size(110, 110);
+            this.pbMotor_2.Size = new System.Drawing.Size(147, 135);
             this.pbMotor_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMotor_2.TabIndex = 7;
             this.pbMotor_2.TabStop = false;
@@ -146,20 +148,44 @@ namespace MySCADA
             // pbMotor_1
             // 
             this.pbMotor_1.Image = global::MySCADA.Properties.Resources.Motor_off_1;
-            this.pbMotor_1.Location = new System.Drawing.Point(62, 46);
-            this.pbMotor_1.Margin = new System.Windows.Forms.Padding(2);
+            this.pbMotor_1.Location = new System.Drawing.Point(83, 57);
+            this.pbMotor_1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbMotor_1.Name = "pbMotor_1";
-            this.pbMotor_1.Size = new System.Drawing.Size(110, 110);
+            this.pbMotor_1.Size = new System.Drawing.Size(147, 135);
             this.pbMotor_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMotor_1.TabIndex = 7;
             this.pbMotor_1.TabStop = false;
             this.pbMotor_1.Click += new System.EventHandler(this.pbMotor_1_Click);
             // 
+            // buttonShowGraph
+            // 
+            this.buttonShowGraph.Location = new System.Drawing.Point(867, 498);
+            this.buttonShowGraph.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonShowGraph.Name = "buttonShowGraph";
+            this.buttonShowGraph.Size = new System.Drawing.Size(175, 62);
+            this.buttonShowGraph.TabIndex = 13;
+            this.buttonShowGraph.Text = "SHOW GRAPH";
+            this.buttonShowGraph.UseVisualStyleBackColor = true;
+            this.buttonShowGraph.Click += new System.EventHandler(this.buttonShowGraph_Click);
+            // 
+            // buttonShowAlarm
+            // 
+            this.buttonShowAlarm.Location = new System.Drawing.Point(1121, 498);
+            this.buttonShowAlarm.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonShowAlarm.Name = "buttonShowAlarm";
+            this.buttonShowAlarm.Size = new System.Drawing.Size(175, 62);
+            this.buttonShowAlarm.TabIndex = 13;
+            this.buttonShowAlarm.Text = "SHOW ALARM";
+            this.buttonShowAlarm.UseVisualStyleBackColor = true;
+            this.buttonShowAlarm.Click += new System.EventHandler(this.buttonShowAlarm_Click);
+            // 
             // GraphicDisplayDrag
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 500);
+            this.ClientSize = new System.Drawing.Size(1493, 615);
+            this.Controls.Add(this.buttonShowAlarm);
+            this.Controls.Add(this.buttonShowGraph);
             this.Controls.Add(this.rjToggleButton1);
             this.Controls.Add(this.zedGraphLevel);
             this.Controls.Add(this.buttonStop);
@@ -168,7 +194,7 @@ namespace MySCADA
             this.Controls.Add(this.pbValve);
             this.Controls.Add(this.pbMotor_2);
             this.Controls.Add(this.pbMotor_1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GraphicDisplayDrag";
             this.Text = "GraphicDisplayDrag";
             this.Load += new System.EventHandler(this.GraphicDisplayDrag_Load);
@@ -191,5 +217,7 @@ namespace MySCADA
         private System.Windows.Forms.Button buttonStop;
         private ZedGraph.ZedGraphControl zedGraphLevel;
         private RJToggleButton rjToggleButton1;
+        private System.Windows.Forms.Button buttonShowGraph;
+        private System.Windows.Forms.Button buttonShowAlarm;
     }
 }

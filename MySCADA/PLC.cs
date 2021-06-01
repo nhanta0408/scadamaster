@@ -52,6 +52,12 @@ namespace MySCADA
                 Level = ((ushort)levelObj).ConvertToShort();
                 Console.WriteLine("Level nè: " + Level.ToString());
 
+                Historian levelHistorian = Parent.FindHistorian("Level");
+                levelHistorian.ringBuffer.Enqueue(Level);
+
+                Alarm levelAlarm = Parent.FindAlarm("Level");
+                AlarmTag levelAlarmTag = new AlarmTag("Level", DateTime.Now, Level, " "); //Chưa so sánh nên chưa biết alarm code
+                levelAlarm.CheckAlarmLevel(levelAlarmTag);
             }
 
         }

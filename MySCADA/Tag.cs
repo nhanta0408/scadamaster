@@ -19,6 +19,12 @@ namespace MySCADA
             Name = name;
             Address = address;
         }
-
+        public Tag(string name, dynamic value, string quality, DateTime timestamp)
+        {
+            Name = name;
+            Value = value;
+            Quality = quality;
+            TimeStamp = timestamp;
+        }
     }
 }

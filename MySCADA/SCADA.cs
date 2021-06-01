@@ -12,7 +12,10 @@ namespace MySCADA
         public ArrayList Tasks = new ArrayList();
         public ArrayList Displays = new ArrayList();
         public ArrayList Motor_faceplates = new ArrayList();
+        public ArrayList Graph = new ArrayList();
         public ArrayList Historians = new ArrayList();
+        public ArrayList Alarms = new ArrayList();
+        public ArrayList AlarmDisplays = new ArrayList();
 
         public PLC S71500;
 
@@ -132,7 +135,33 @@ namespace MySCADA
             }
             return result;
         }
-        
-
+        public void AddGraph(LevelGraph levelGraph)
+        {
+            levelGraph.Parent = this;
+            Graph.Add(levelGraph);
+        }
+        public void AddAlarm(Alarm alarm)
+        {
+            alarm.Parent = this;
+            Alarms.Add(alarm);
+        }
+        public Alarm FindAlarm(string name)
+        {
+            Alarm result = null;
+            foreach (var item in Alarms)
+            {
+                var temp = (Alarm)item;
+                if (temp.Name == name)
+                {
+                    result = temp;
+                }
+            }
+            return result;
+        }
+        public void AddAlarmDisplay(AlarmDisplay alarmDisplay)
+        {
+            alarmDisplay.Parent = this;
+            AlarmDisplays.Add(alarmDisplay);
+        }
     }
 }

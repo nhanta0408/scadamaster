@@ -11,7 +11,6 @@ namespace MySCADA
     {
         public SCADA Parent = null;
         public string Name;
-        public ArrayList Tags = new ArrayList();
         public RingBuffer ringBuffer;
         public Historian(string name, int numberOfData)
         {
