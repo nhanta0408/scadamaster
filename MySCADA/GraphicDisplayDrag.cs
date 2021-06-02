@@ -22,9 +22,8 @@ namespace MySCADA
         Image img;
         Image img_motor_on_1, img_motor_on_2, img_motor_on_3, img_motor_on_4, img_motor_on_5, img_motor_on_6, img_motor_on_7;
         Image img_motor_off_1, img_motor_off_2, img_motor_off_3, img_motor_off_4, img_motor_off_5, img_motor_off_6, img_motor_off_7;
-
         Image img_valve_on, img_valve_off;
-
+        Image img_pipe_off, img_pipe_on;
 
 
         public GraphicDisplayDrag(string name, int period)
@@ -49,6 +48,9 @@ namespace MySCADA
             img_valve_on = Image.FromFile("valve/ValveSolinoid_on.png");
             img_valve_off = Image.FromFile("valve/ValveSolinoid_off.png");
 
+            img_pipe_off =  Image.FromFile("Pipe_off.png");
+            img_pipe_on = Image.FromFile("Pipe_on.png");
+
             Name = name;
             Period = period;
             updateTimer1.Interval = Period;
@@ -60,18 +62,20 @@ namespace MySCADA
             pbMotor_2.Image = img_motor_off_1;
             pbValve.Image = img_valve_on;
             pbMotor_1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbMotor_1.BackColor = Color.Transparent;
             pbMotor_2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbMotor_2.BackColor = Color.Transparent;
             pbValve.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbValve.BackColor = Color.Transparent;
             pbValve.Size = new Size(110, 110);
-
 
         }
 
         private void GraphicDisplayDrag_Load(object sender, EventArgs e)
         {
-            
+
         }
-        
+
 
 
         private Image MotorSwCaImg(bool status, Int16 position)
@@ -181,6 +185,7 @@ namespace MySCADA
                 if (tagRunFB != null && tagPos != null)
                 {
                     pbMotor_1.Image = MotorSwCaImg(Convert.ToBoolean(tagRunFB.Value), Convert.ToInt16(tagPos.Value));
+                    pbPipe1.Image = (Convert.ToBoolean(tagRunFB.Value)) ? img_pipe_on : img_pipe_off;
 
                 }
                 tagRunFB = task.FindTag("Motor_2_RunFB"); //Đọc RunFB Motor2
@@ -188,6 +193,8 @@ namespace MySCADA
                 if (tagRunFB != null && tagPos != null)
                 {
                     pbMotor_2.Image = MotorSwCaImg(Convert.ToBoolean(tagRunFB.Value), Convert.ToInt16(tagPos.Value));
+                    pbPipe2.Image = (Convert.ToBoolean(tagRunFB.Value)) ? img_pipe_on : img_pipe_off;
+
                 }
                 tagRunFB = task.FindTag("Valve_RunFB"); //Đọc RunFB Valve
                 if (tagRunFB != null)
@@ -195,11 +202,24 @@ namespace MySCADA
                     pbValve.SizeMode = PictureBoxSizeMode.StretchImage;
                     pbValve.Size = new Size(110, 110);
                     pbValve.Image = (Convert.ToBoolean(tagRunFB.Value)) ? img_valve_on : img_valve_off;
+                    pbPipe3.Image = (Convert.ToBoolean(tagRunFB.Value)) ? img_pipe_on : img_pipe_off;
                 }
                 Tag tagLevel = task.FindTag("Level");
                 if (tagLevel != null)
                 {
                     barLevel.Value = tagLevel.Value;
+                    if(tagLevel.Value< Alarm.lowlow || tagLevel.Value > Alarm.highhigh)
+                    {
+                        barLevel.TextColor = Color.FromArgb(0x990000);
+                    }
+                    else if (tagLevel.Value > Alarm.low && tagLevel.Value < Alarm.high)
+                    {
+                        barLevel.TextColor = Color.Black;
+                    }
+                    else
+                    {
+                        barLevel.TextColor = Color.Yellow;
+                    }
                 }
             }
         }
@@ -230,6 +250,16 @@ namespace MySCADA
             LevelGraph lg = (LevelGraph)Parent.Graph[0];
             lg.BringToFront();
             lg.Show();
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            ovalRunning.BackColor = Color.Green;
+        }
+
+        private void buttonStop_Click(object sender, EventArgs e)
+        {
+            ovalRunning.BackColor = Color.Gray;
         }
 
         private void buttonShowAlarm_Click(object sender, EventArgs e)

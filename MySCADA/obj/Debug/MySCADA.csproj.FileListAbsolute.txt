@@ -7,13 +7,12 @@ D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.p
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.GraphicDisplay.resources
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.csproj.GenerateResource.cache
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.csproj.CopyComplete
-D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.GraphicDisplayDrag.resources
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.Properties.Resources.resources
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.Motor.resources
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.MotorFaceplate.resources
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\bin\Debug\ZedGraph.dll
-D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.csprojAssemblyReference.cache
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.LevelGraph.resources
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.AlarmDisplay.resources
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.csprojAssemblyReference.cache

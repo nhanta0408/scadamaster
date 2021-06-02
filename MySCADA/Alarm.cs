@@ -11,7 +11,7 @@ namespace MySCADA
         public SCADA Parent = null;
         public string Name;
         public List<AlarmTag> alarmTag = new List<AlarmTag>();
-        const int lowlow = 10, low = 20, high = 80, highhigh = 90;
+        public const int lowlow = 10, low = 20, high = 80, highhigh = 90;
         public Alarm(string name)
         {
             Name = name;

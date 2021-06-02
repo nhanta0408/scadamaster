@@ -25,6 +25,7 @@ namespace MySCADA
 
             zedGraphIsPanning = false;
             zedGraphLevel.IsShowVScrollBar = false;
+            zedGraphLevel.IsEnableVZoom = false;
             GraphPane myPane = zedGraphLevel.GraphPane;
             myPane.Title.Text = "Đồ thị thể hiện mức nước trong bồn";
             myPane.XAxis.Title.Text = "Time (Seconds)";
