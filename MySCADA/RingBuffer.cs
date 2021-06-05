@@ -17,7 +17,7 @@ namespace MySCADA
             this.front = this.rear = -1; //-1 là out of nums, tức là chưa liên quan gì nums
             this.nums = new dynamic[initialSize];
         }
-        private bool isFull()
+        public bool isFull()
         {
             //Lúc này rear tăng 1 thì sẽ bằng front, tức là rear sát đít front
             return (rear + 1) % nums.Length == front;

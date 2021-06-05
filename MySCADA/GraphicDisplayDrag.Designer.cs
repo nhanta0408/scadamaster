@@ -143,7 +143,7 @@ namespace MySCADA
             this.buttonShowGraph.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.buttonShowGraph.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(77)))));
             this.buttonShowGraph.Location = new System.Drawing.Point(1310, 283);
-            this.buttonShowGraph.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonShowGraph.Margin = new System.Windows.Forms.Padding(4);
             this.buttonShowGraph.Name = "buttonShowGraph";
             this.buttonShowGraph.Size = new System.Drawing.Size(223, 74);
             this.buttonShowGraph.TabIndex = 13;
@@ -157,7 +157,7 @@ namespace MySCADA
             this.buttonShowAlarm.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.buttonShowAlarm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(41)))), ((int)(((byte)(77)))));
             this.buttonShowAlarm.Location = new System.Drawing.Point(1310, 383);
-            this.buttonShowAlarm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonShowAlarm.Margin = new System.Windows.Forms.Padding(4);
             this.buttonShowAlarm.Name = "buttonShowAlarm";
             this.buttonShowAlarm.Size = new System.Drawing.Size(223, 74);
             this.buttonShowAlarm.TabIndex = 13;
@@ -169,7 +169,7 @@ namespace MySCADA
             // 
             this.pbBackground.Image = ((System.Drawing.Image)(resources.GetObject("pbBackground.Image")));
             this.pbBackground.Location = new System.Drawing.Point(48, 27);
-            this.pbBackground.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbBackground.Margin = new System.Windows.Forms.Padding(4);
             this.pbBackground.Name = "pbBackground";
             this.pbBackground.Size = new System.Drawing.Size(864, 660);
             this.pbBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -181,7 +181,7 @@ namespace MySCADA
             this.pbPipe1.Image = ((System.Drawing.Image)(resources.GetObject("pbPipe1.Image")));
             this.pbPipe1.InitialImage = null;
             this.pbPipe1.Location = new System.Drawing.Point(277, 153);
-            this.pbPipe1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPipe1.Margin = new System.Windows.Forms.Padding(4);
             this.pbPipe1.Name = "pbPipe1";
             this.pbPipe1.Size = new System.Drawing.Size(140, 49);
             this.pbPipe1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -193,7 +193,7 @@ namespace MySCADA
             this.pbPipe2.Image = ((System.Drawing.Image)(resources.GetObject("pbPipe2.Image")));
             this.pbPipe2.InitialImage = null;
             this.pbPipe2.Location = new System.Drawing.Point(277, 379);
-            this.pbPipe2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPipe2.Margin = new System.Windows.Forms.Padding(4);
             this.pbPipe2.Name = "pbPipe2";
             this.pbPipe2.Size = new System.Drawing.Size(140, 49);
             this.pbPipe2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -205,7 +205,7 @@ namespace MySCADA
             this.pbPipe3.Image = ((System.Drawing.Image)(resources.GetObject("pbPipe3.Image")));
             this.pbPipe3.InitialImage = null;
             this.pbPipe3.Location = new System.Drawing.Point(905, 574);
-            this.pbPipe3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPipe3.Margin = new System.Windows.Forms.Padding(4);
             this.pbPipe3.Name = "pbPipe3";
             this.pbPipe3.Size = new System.Drawing.Size(140, 49);
             this.pbPipe3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,9 +224,9 @@ namespace MySCADA
             this.groupBox1.Controls.Add(this.barLevel);
             this.groupBox1.Controls.Add(this.pbBackground);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1213, 758);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
@@ -235,7 +235,7 @@ namespace MySCADA
             // barLevel
             // 
             this.barLevel.BackColor = System.Drawing.Color.DarkGray;
-            this.barLevel.Font = new System.Drawing.Font("Arial", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barLevel.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
             this.barLevel.ForeColor = System.Drawing.Color.DodgerBlue;
             this.barLevel.Location = new System.Drawing.Point(529, 140);
             this.barLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -243,6 +243,7 @@ namespace MySCADA
             this.barLevel.Size = new System.Drawing.Size(64, 480);
             this.barLevel.TabIndex = 9;
             this.barLevel.Text = "basicProgressBar1";
+            this.barLevel.Value = 100;
             // 
             // ovalRunning
             // 

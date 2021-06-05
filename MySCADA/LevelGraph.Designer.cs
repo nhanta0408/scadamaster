@@ -41,7 +41,7 @@ namespace MySCADA
             // zedGraphLevel
             // 
             this.zedGraphLevel.Location = new System.Drawing.Point(34, 33);
-            this.zedGraphLevel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.zedGraphLevel.Margin = new System.Windows.Forms.Padding(5);
             this.zedGraphLevel.Name = "zedGraphLevel";
             this.zedGraphLevel.ScrollGrace = 0D;
             this.zedGraphLevel.ScrollMaxX = 0D;
@@ -55,7 +55,7 @@ namespace MySCADA
             // 
             // updateTimer1
             // 
-            this.updateTimer1.Interval = 500;
+            this.updateTimer1.Interval = 1000;
             this.updateTimer1.Tick += new System.EventHandler(this.updateTimer1_Tick);
             // 
             // label1
@@ -118,7 +118,7 @@ namespace MySCADA
             this.Controls.Add(this.togCompactMode);
             this.Controls.Add(this.togIsEnabledPan);
             this.Controls.Add(this.zedGraphLevel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LevelGraph";
             this.Text = "LevelGraph";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LevelGraph_FormClosing);
