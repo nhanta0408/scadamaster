@@ -16,3 +16,4 @@ D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\bin\Debug\ZedGraph.
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.LevelGraph.resources
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.AlarmDisplay.resources
 D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.csprojAssemblyReference.cache
+D:\Study Document\PGS202\SCADA\CSharpProject\MySCADA\MySCADA\obj\Debug\MySCADA.MotorModbus.resources

@@ -41,7 +41,7 @@ namespace MySCADA
             // pbRunFB
             // 
             this.pbRunFB.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.pbRunFB.Location = new System.Drawing.Point(189, 90);
+            this.pbRunFB.Location = new System.Drawing.Point(190, 95);
             this.pbRunFB.Name = "pbRunFB";
             this.pbRunFB.Size = new System.Drawing.Size(55, 55);
             // 

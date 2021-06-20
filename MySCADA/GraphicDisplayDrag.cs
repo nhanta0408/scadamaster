@@ -262,6 +262,13 @@ namespace MySCADA
             ovalRunning.BackColor = Color.Gray;
         }
 
+        private void buttonShowMotorModbus_Click(object sender, EventArgs e)
+        {
+            MotorModbus mm = (MotorModbus)Parent.MotorsModbus[0];
+            mm.BringToFront();
+            mm.Show();
+        }
+
         private void buttonShowAlarm_Click(object sender, EventArgs e)
         {
             AlarmDisplay ad = (AlarmDisplay)Parent.AlarmDisplays[0];

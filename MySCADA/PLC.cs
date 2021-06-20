@@ -56,7 +56,7 @@ namespace MySCADA
                 levelHistorian.ringBuffer.Enqueue(Level);
                 Historian levelTimestampHistorian = Parent.FindHistorian("LevelTimestamp");
                 levelTimestampHistorian.ringBuffer.Enqueue(DateTime.Now);
-                
+
                 Alarm levelAlarm = Parent.FindAlarm("Level");
                 AlarmTag levelAlarmTag = new AlarmTag("Level", DateTime.Now, Level, " "); //Chưa so sánh nên chưa biết alarm code
                 levelAlarm.CheckAlarmLevel(levelAlarmTag);

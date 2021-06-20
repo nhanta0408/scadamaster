@@ -24,8 +24,18 @@ namespace MySCADA
             //Trước hết tạo phần cao nhất là SCADA
             SCADA Root = new SCADA();
             PLC plc = new PLC();
+
             Root.AddPLC(plc); //ko có đối số
 
+            Historian levelHistorian = new Historian("Level", 8000);
+            Root.AddHistorian(levelHistorian);
+            Historian levelTimestampHistorian = new Historian("LevelTimestamp", 8000);
+            Root.AddHistorian(levelTimestampHistorian);
+
+
+            AlarmDisplay LevelAlarmDisplay = new AlarmDisplay();
+            LevelAlarmDisplay.Parent = Root;
+            Root.AddAlarmDisplay(LevelAlarmDisplay);
             //Tạo Task
             Task Task1 = new Task("Task_1", 100);
             //Tạo các Tag
@@ -105,10 +115,7 @@ namespace MySCADA
             Root.AddFaceplate(Motor_3_Faceplate);
 
 
-            Historian levelHistorian = new Historian("Level",8000);
-            Root.AddHistorian(levelHistorian);
-            Historian levelTimestampHistorian = new Historian("LevelTimestamp", 8000);
-            Root.AddHistorian(levelTimestampHistorian);
+
 
             Alarm levelAlarm = new Alarm("Level");
             Root.AddAlarm(levelAlarm);
@@ -119,17 +126,18 @@ namespace MySCADA
             LevelGraph LevelGraph = new LevelGraph();
             LevelGraph.Parent = Root;
             Root.AddGraph(LevelGraph);
-
-            AlarmDisplay LevelAlarmDisplay = new AlarmDisplay();
-            LevelAlarmDisplay.Parent = Root;
-            Root.AddAlarmDisplay(LevelAlarmDisplay);
+            PLCModbus plcModbus = new PLCModbus();
+            Root.AddPLCModbus(plcModbus);
+            MotorModbus motorModbus = new MotorModbus();
+            Root.AddMotorModbus(motorModbus);
 
             GraphicDisplayDrag Main_Page_Drag = new GraphicDisplayDrag("Main_Page_Drag", 100);
             Main_Page_Drag.Parent = Root;
             Main_Page_Drag.ShowDialog();
 
-            
-            
+
+
+
             Console.ReadKey();
 
 

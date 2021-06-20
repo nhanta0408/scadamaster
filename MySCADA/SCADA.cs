@@ -16,9 +16,11 @@ namespace MySCADA
         public ArrayList Historians = new ArrayList();
         public ArrayList Alarms = new ArrayList();
         public ArrayList AlarmDisplays = new ArrayList();
+        public ArrayList MotorsModbus = new ArrayList();
+
 
         public PLC S71500;
-
+        public PLCModbus M340;
         public SCADA()
         {
             
@@ -35,6 +37,13 @@ namespace MySCADA
             plc.Parent = this;
             S71500 = plc;
         }
+
+        public void AddPLCModbus(PLCModbus plc)
+        {
+            plc.Parent = this;
+            M340 = plc;
+        }
+
         public void AddFaceplate(MotorFaceplate faceplate)
         {
             faceplate.Parent = this;
@@ -162,6 +171,11 @@ namespace MySCADA
         {
             alarmDisplay.Parent = this;
             AlarmDisplays.Add(alarmDisplay);
+        }
+        public void AddMotorModbus(MotorModbus motorModbus)
+        {
+            motorModbus.Parent = this;
+            MotorsModbus.Add(motorModbus);
         }
     }
 }
